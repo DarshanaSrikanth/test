@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Laundry Service System</h1>
+        <div id="loginSection">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+        
+        <div id="userSection" style="display: none;">
+            <button onclick="logout()">Logout</button>
+            <h2>Customer Details</h2>
+            <input type="text" id="customerName" placeholder="Customer Name">
+            <input type="text" id="customerPhone" placeholder="Customer Phone">
+            <input type="email" id="customerEmail" placeholder="Customer Email">
+            <button onclick="saveCustomerDetails()">Save Customer Details</button>
+
+            <h2>Clothes Allocation</h2>
+            <div id="clothesContainer">
+                <div class="clothItem">
+                    <select class="clothType">
+                        <option value="cotton">Cotton</option>
+                        <option value="silk">Silk</option>
+                        <option value="woollen">Woollen</option>
+                        <option value="mixed">Mixed Cotton</option>
+                    </select>
+                    <select class="laundryType">
+                        <option value="cotton care">Cotton Care</option>
+                        <option value="silk care">Silk Care</option>
+                        <option value="dry wash">Dry Wash</option>
+                        <option value="dry clean">Dry Clean</option>
+                    </select>
+                    <input type="number" class="cost" placeholder="Cost">
+                    <input type="date" class="deliveryDate">
+                </div>
+            </div>
+            <button onclick="addCloth()">Add More Clothes</button>
+            <button onclick="allocateClothes()">Allocate Clothes</button>
+
+            <h2>View/Update Customer Details</h2>
+            <div id="customerDetails"></div>
+            <button onclick="goBack()">Back</button>
+        </div>
+        
+        <div id="adminSection" style="display: none;">
+            <button onclick="logout()">Logout</button>
+            <h2>Generate Reports</h2>
+            <button onclick="generateReport('daily')">Daily Report</button>
+            <button onclick="generateReport('weekly')">Weekly Report</button>
+            <button onclick="generateReport('monthly')">Monthly Report</button>
+            <div id="reportSection"></div>
+            <button onclick="goBack()">Back</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
